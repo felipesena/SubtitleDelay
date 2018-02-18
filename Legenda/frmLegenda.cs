@@ -40,10 +40,11 @@ namespace Legenda
                 {
                     legenda = new Legenda(arquivo);
                     cbFalas.Visible = true;
+                    lbFalas.Visible = true;
                 }
                 catch (ArgumentNullException)
                 {
-                    MessageBox.Show("Gentileza insira algum arquivo a ser modificado", "Arquivo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Gentileza insira algum arquivo a ser modificado", "Legenda", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
         }
@@ -77,7 +78,10 @@ namespace Legenda
 
                 try
                 {
-                    legenda.SincronizaLegenda(contador, txbDelay.Text, radioButton);
+                    if (string.IsNullOrEmpty(txbDelay.Text))
+                        MessageBox.Show("Por favor insira o tempo de delay", "Delay", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    else
+                        legenda.SincronizaLegenda(contador, txbDelay.Text, radioButton);
                 }
                 catch (DelayMinimoException)
                 {
@@ -112,14 +116,14 @@ namespace Legenda
                 txbFala.Visible = false;
                 btnProcurarFala.Visible = false;
                 lbFala.Visible = false;
-                lbAPartirDe.Visible = false;
+                lbAPartirDe.Visible = false;                
             }
             else
             {
                 lbInicio.Visible = true;
                 txbFala.Visible = true;
                 btnProcurarFala.Visible = true;
-                lbAPartirDe.Visible = true;
+                lbAPartirDe.Visible = true;                
             }
         }
     }

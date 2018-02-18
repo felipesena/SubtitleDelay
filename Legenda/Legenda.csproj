@@ -51,7 +51,6 @@
   <ItemGroup>
     <Compile Include="Legenda.cs" />
     <Compile Include="DelayMinimoException.cs" />
-    <Compile Include="ForcaBruta.cs" />
     <Compile Include="frmLegenda.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -44,12 +44,15 @@
             this.lbLegendaStatus = new System.Windows.Forms.Label();
             this.btnProcurarFala = new System.Windows.Forms.Button();
             this.btnSincronizar = new System.Windows.Forms.Button();
+            this.lbLegenda = new System.Windows.Forms.Label();
+            this.lbFalas = new System.Windows.Forms.Label();
             this.pnPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
             // txbArquivo
             // 
-            this.txbArquivo.Location = new System.Drawing.Point(15, 12);
+            this.txbArquivo.Enabled = false;
+            this.txbArquivo.Location = new System.Drawing.Point(75, 12);
             this.txbArquivo.Name = "txbArquivo";
             this.txbArquivo.ReadOnly = true;
             this.txbArquivo.Size = new System.Drawing.Size(149, 20);
@@ -57,7 +60,7 @@
             // 
             // btnProcurar
             // 
-            this.btnProcurar.Location = new System.Drawing.Point(170, 12);
+            this.btnProcurar.Location = new System.Drawing.Point(230, 11);
             this.btnProcurar.Name = "btnProcurar";
             this.btnProcurar.Size = new System.Drawing.Size(75, 23);
             this.btnProcurar.TabIndex = 1;
@@ -104,6 +107,7 @@
             this.txbDelay.Name = "txbDelay";
             this.txbDelay.Size = new System.Drawing.Size(86, 20);
             this.txbDelay.TabIndex = 9;
+            this.txbDelay.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // txbFala
             // 
@@ -126,6 +130,7 @@
             // 
             // pnPrincipal
             // 
+            this.pnPrincipal.Controls.Add(this.lbFalas);
             this.pnPrincipal.Controls.Add(this.lbAPartirDe);
             this.pnPrincipal.Controls.Add(this.lbFala);
             this.pnPrincipal.Controls.Add(this.cbFalas);
@@ -168,9 +173,9 @@
             this.cbFalas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFalas.FormattingEnabled = true;
             this.cbFalas.Items.AddRange(new object[] {
-            "Todas as Falas",
-            "A partir de uma Fala específica"});
-            this.cbFalas.Location = new System.Drawing.Point(157, 32);
+            "Todas as falas",
+            "A partir de uma fala específica"});
+            this.cbFalas.Location = new System.Drawing.Point(217, 32);
             this.cbFalas.Name = "cbFalas";
             this.cbFalas.Size = new System.Drawing.Size(166, 21);
             this.cbFalas.TabIndex = 13;
@@ -209,11 +214,33 @@
             this.btnSincronizar.UseVisualStyleBackColor = true;
             this.btnSincronizar.Click += new System.EventHandler(this.btnSincronizar_Click);
             // 
+            // lbLegenda
+            // 
+            this.lbLegenda.AutoSize = true;
+            this.lbLegenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLegenda.Location = new System.Drawing.Point(15, 14);
+            this.lbLegenda.Name = "lbLegenda";
+            this.lbLegenda.Size = new System.Drawing.Size(60, 13);
+            this.lbLegenda.TabIndex = 13;
+            this.lbLegenda.Text = "Legenda:";
+            // 
+            // lbFalas
+            // 
+            this.lbFalas.AutoSize = true;
+            this.lbFalas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFalas.Location = new System.Drawing.Point(170, 35);
+            this.lbFalas.Name = "lbFalas";
+            this.lbFalas.Size = new System.Drawing.Size(41, 13);
+            this.lbFalas.TabIndex = 20;
+            this.lbFalas.Text = "Falas:";
+            this.lbFalas.Visible = false;
+            // 
             // frmLegenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(467, 243);
+            this.Controls.Add(this.lbLegenda);
             this.Controls.Add(this.pnPrincipal);
             this.Controls.Add(this.btnProcurar);
             this.Controls.Add(this.txbArquivo);
@@ -246,6 +273,8 @@
         private System.Windows.Forms.ComboBox cbFalas;
         private System.Windows.Forms.Label lbFala;
         private System.Windows.Forms.Label lbAPartirDe;
+        private System.Windows.Forms.Label lbLegenda;
+        private System.Windows.Forms.Label lbFalas;
     }
 }
 

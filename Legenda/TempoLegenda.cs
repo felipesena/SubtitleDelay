@@ -34,18 +34,11 @@ namespace Legenda
         public string somaLegenda(string valor)
         {            
             int milisegundos;
-            int segundos;                    
+            int segundos;
 
-
-            if (valor == "  ,    s")
-            { 
-                throw new DelayMinimoException();
-            }
-            else
-            {
-                segundos = int.Parse(valor.Split(' ')[0].Split(',')[0]);
-                milisegundos = int.Parse(valor.Split(' ')[0].Split(',')[1]);
-            }
+            segundos = int.Parse(valor.Substring(0, 2));
+            milisegundos = int.Parse(valor.Substring(2));
+            
 
             int horaAtualizado = int.Parse(this.hora);
             int minutoAtualizado = int.Parse(this.minuto);
@@ -99,16 +92,8 @@ namespace Legenda
             int milisegundos;
             int segundos;
 
-
-            if (valor == "  ,    s")
-            {
-                throw new DelayMinimoException();
-            }
-            else
-            {
-                segundos = int.Parse(valor.Split(' ')[0].Split(',')[0]);
-                milisegundos = int.Parse(valor.Split(' ')[0].Split(',')[1]);
-            }
+            segundos = int.Parse(valor.Substring(0, 2));
+            milisegundos = int.Parse(valor.Substring(2));
 
             int horaAtualizado = int.Parse(this.hora);
             int minutoAtualizado = int.Parse(this.minuto);

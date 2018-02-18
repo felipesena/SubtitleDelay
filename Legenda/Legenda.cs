@@ -49,15 +49,11 @@ namespace Legenda
 
         public List<Fala> BuscaFala(string texto)
         {
-            List<Fala> falas = new List<Fala>();
-            ForcaBruta metodoBusca = new ForcaBruta();
+            List<Fala> falas = new List<Fala>();            
 
             foreach (Fala l in listaFalas)
             {
-                metodoBusca.Buscar(l.fala, texto);
-
-                if (metodoBusca.numMatch > 0)
-                    falas.Add(l);
+                if (l.fala.Contains(texto)) falas.Add(l);
             }
             return falas;
         }
